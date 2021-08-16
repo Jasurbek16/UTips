@@ -1,0 +1,46 @@
+{% extends 'UTipsApp/base.html' %}
+{% block link %}
+	<a class="nav-item nav-link" href="{% url 'Ut-about' %}">About</a>
+{% endblock link %}
+{% block content %} 
+
+<h2>
+	{{ topic.topic }}
+</h2><br>
+
+<h4>
+	<a class="ml-5" href="{% url 'subject-details' subject.id %}" style="color:rgb(42, 30, 53)">Topics👈</a>
+</h4><br>
+
+{% if user == topic.author %}
+	<a class="btn btn-secondary btn-sm ml-5 mb-3" href="{% url 'edit-topic' topic.id %}">Edit</a>
+	<a class="btn btn-danger btn-sm mb-3" href="{% url 'delete-topic' topic.id %}">Delete</a>
+{% endif %}
+
+<ul>	
+	<article class="media content-section" style="border-radius: 5px">
+		<div class="media-body">
+			<div class="article-metadata">
+				<strong>Professor:</strong>
+				{{ subject.professor }}
+			</div>
+			<div class="article-metadata">
+				<br>
+				<strong>Date:</strong>
+				{{ topic.date_shared|date:'M d, Y H:i' }}
+			</div>
+			<div class="article-metadata">
+				<br>
+				<strong>Author:</strong>
+				<a href="{% url 'user-topics' topic.author.username %}">{{ topic.author }}</a>
+			</div>	
+			<div class="article-metadata">
+				<br>
+				<strong>Content:</strong>
+				{{ topic.text|linebreaks }}
+			</div>
+		</div>
+	</article>
+</ul>
+
+{% endblock content %}

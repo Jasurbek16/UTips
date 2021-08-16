@@ -1,0 +1,18 @@
+{% extends 'UTipsApp/base.html' %}
+{% block content %}
+    <div class = "content-section">
+        <form  method = "POST">
+           <!--adding the cross site request forgery token (CSRF)-->
+           {% csrf_token %}
+           <fieldset class="form-goup">
+               <legend class="border-bottom mb-4">Delete Topic</legend>
+           </fieldset> 
+           <h2>Are you sure you want to delete the "{{ object.topic }}" ?</h2>
+           <p style="color:crimson">Warning: This action cannot be undone 🗑</p>
+           <div class="form-group">
+               <button class = "btn btn-outline-danger" type="submit">Yes, Delete</button>
+               <a class = "btn btn-outline-secondary" href = "{% url 'topic-details' object.id %}" >Cancel</a>
+           </div>
+        </form>
+    </div>
+{% endblock content %}

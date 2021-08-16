@@ -1,0 +1,21 @@
+{% extends 'UTipsApp/base.html' %} 
+{% load crispy_forms_tags %} 
+{% block content %}
+<div class="content-section">
+	<form method="POST">
+		<!--adding the cross site request forgery token (CSRF)-->
+		{% csrf_token %}
+		<fieldset class="form-goup">
+			<legend class="border-bottom mb-4">
+				Edit the Details of {{ subject.name }} 
+			</legend>
+			{{ form|crispy }}
+			<!--| is used for specifying a filter-->
+			<!--^ renders our form in paragraph tags-->
+		</fieldset>
+		<div class="form-group">
+			<button class="btn btn-outline-info" type="submit">Modify</button>
+		</div>
+	</form>
+</div>
+{% endblock content %}

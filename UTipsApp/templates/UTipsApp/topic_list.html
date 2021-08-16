@@ -1,0 +1,71 @@
+{% extends 'UTipsApp/base.html' %} 
+{% block link %}
+	<a class="nav-item nav-link" href="{% url 'Ut-about' %}">About</a>
+{% if user.is_authenticated %}
+	<a class="nav-item nav-link" href="{% url 'add-topic' subject.id %}">Add Topic</a> 
+{% endif %}
+{% endblock link %} 
+{% block content %} 
+	<h2>Topics from {{ subject }} ({{ topics.count }})</h2>
+	<br>
+	<h4>
+		<a href="{% url 'Ut-home' %}" style="color:rgb(42, 30, 53)">Home👈</a>
+	</h4>
+	<hr>
+	{% for topic in topic_page %}
+		<article class="media content-section" style="border-radius: 45px; background-color: rgba(148, 141, 212, 0.397);">
+			<a href="{% url 'user-topics' topic.author.username %}"><img class="rounded-circle article-img" src="{{ topic.author.profile.image.url }}"></a>
+			<div class="media-body">
+				<h3>
+					<a class="article-title" href="{% url 'topic-details' topic.id %}">{{ topic.topic }}</a>
+				</h3>
+				<div class="article-metadata">
+					Author:<a class="ml-1" href="{% url 'user-topics' topic.author.username %}">{{ topic.author }}</a>
+				</div>
+			</div>
+		</article>
+	{% empty %}
+		<h3>
+			No Topics Have Been Added Yet ... 😕 
+		</h3>
+	{% endfor %}
+
+{% if topic_page %}
+	
+	{% if topic_page.has_previous %}
+		<a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+		<a class="btn btn-outline-info mb-4" href="?page={{ topic_page.previous_page_number }}">Previous</a>
+	{% endif %}
+
+	{% for num in topic_page.paginator.page_range %}
+		{% if topic_page.number == num %}
+			<a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+		{% elif num > topic_page.number|add:'-3' and num < topic_page.number|add:'3' %}
+			<a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }} </a>
+		{% endif %}
+	{% endfor %}
+
+	{% if topic_page.has_next %}
+		<a class="btn btn-outline-info mb-4" href="?page={{ topic_page.next_page_number }}">Next</a>
+		<a class="btn btn-outline-info mb-4" href="?page={{ topic_page.paginator.num_pages }}">Last</a>
+	{% endif %}
+
+{% endif %}
+
+{% endblock content %}
+{% block sidebar %}
+	<div class="col-md-4" id = "sidebar-box">
+		<div class="content-section">
+		  <h3>Topic Info</h3>
+		  <p class='text-muted'>Quick overview of the topics this subject contains.
+			<ul class="list-group" id = "sidebar_info">
+					<li class="list-group-item list-group-item-light"><strong>Topics:</strong> {{ topics.count }}</li>	
+					<li class="list-group-item list-group-item-light"><strong>Last Topic Added:</strong> {{ topics.0.topic }}<br> 
+																	  <strong>On Date:</strong> {{ topics.0.date_shared }}<br>
+																	  <strong>Author:</strong> {{ topics.0.author }}</li>	
+			</ul>
+		  </p>
+		</div>
+	  </div>
+	</div>
+{% endblock sidebar %}

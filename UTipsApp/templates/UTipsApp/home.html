@@ -1,0 +1,78 @@
+{% extends 'UTipsApp/base.html' %}
+{% block link %}
+	<a class="nav-item nav-link" href="{% url 'Ut-about' %}">About</a>
+{% if user.is_authenticated %}
+	<a class="nav-item nav-link" href="{% url 'add-subject' %}">Add Subject</a> 
+{% endif %}
+{% endblock link %}  
+{% block content %} 
+	{% for subject in subject_page %}
+		<article class="media content-section">
+			<img class = "rounded-circle article-img" src="{{ subject.image.url }}">
+			<div class="media-body">
+				<div class="article-metadata">
+					<em class="mr-2">{{ subject.professor }}</em>
+				</div>
+				<h3>
+					<a class="article-title" href="{% url 'subject-details' subject.id %}">{{ subject.name }}</a>
+				</h3>
+			</div>
+		</article>
+	{% empty %}
+		<h2>🙊 Unfortunately, subjects are coming soon...</h2>
+	{% endfor %} 
+
+{% if subject_page %}
+	
+	{% if subject_page.has_previous %}
+		<a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+		<a class="btn btn-outline-info mb-4" href="?page={{ subject_page.previous_page_number }}">Previous</a>
+	{% endif %}
+
+	{% for num in subject_page.paginator.page_range %}
+		{% if subject_page.number == num %}
+			<a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+		{% elif num > subject_page.number|add:'-3' and num < subject_page.number|add:'3' %}
+			<a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }} </a>
+		{% endif %}
+	{% endfor %}
+
+	{% if subject_page.has_next %}
+		<a class="btn btn-outline-info mb-4" href="?page={{ subject_page.next_page_number }}">Next</a>
+		<a class="btn btn-outline-info mb-4" href="?page={{ subject_page.paginator.num_pages }}">Last</a>
+	{% endif %}
+
+{% endif %}
+
+{% endblock content %}
+{% block sidebar %}
+	<div class="col-md-4" id = "sidebar-box">
+		<div class="content-section" style="border-radius: 8px;">
+	     		{% if user.is_authenticated %}
+		  			<h3>User's Info</h3>
+		  			<p class='text-muted'>Current User's Activities for the last time.
+					<ul class="list-group" id = "sidebar_info">
+						<img class="rounded-circle account-img" src="{{ user.profile.image.url }}"">
+						<li class="list-group-item list-group-item-light"><strong>User:</strong> {{ user.username }}</li>
+						{% if topics %}
+							<li class="list-group-item list-group-item-light"><strong>Last Topic Added:</strong> {{ topics.0.topic }}</li> 
+							<li class="list-group-item list-group-item-light"><strong>On Date:</strong> {{ topics.0.date_shared }}</li>
+							<li class="list-group-item list-group-item-light"><strong>On Subject:</strong> {{ topics.0.subject }}</li>
+						{% else %}
+							<li class="list-group-item list-group-item-light"><em>Seems like you don't have any contributions</em></li>
+						{% endif %}
+		  		{% else %}
+		  			<h3>Overall Info</h3>
+		  			<p class='text-muted'>Quick overview of the things this website contains.
+					<ul class="list-group" id = "sidebar_info">
+						<li class="list-group-item list-group-item-light"><strong>Subjects:</strong> {{ subjects.count }}</li>
+						<li class="list-group-item list-group-item-light"><strong>Topics:</strong> {{ topics.count }}</li>	
+						<li class="list-group-item list-group-item-light"><strong>Last Topic Added:</strong> {{ topics.0.topic }}<br>
+											     						  <strong>Date:</strong> {{ topics.0.date_shared }}<br>
+											     						  <strong>Author:</strong> {{ topics.0.author }}</li>	
+				{% endif %}
+					</ul>
+		</div>
+	  </div>
+	</div>
+{% endblock sidebar %}
