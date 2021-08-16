@@ -1,0 +1,24 @@
+{% extends 'UTipsApp/base.html' %} 
+{% load crispy_forms_tags %}
+{% block link %}
+    <a class="nav-item nav-link" href="{% url 'Ut-about' %}">About</a>
+{% endblock link %}
+{% block content %}
+    <div class = "content-section" style="background-color: rgba(240, 248, 255, 0.849);">
+        <form method = "POST">
+            {% csrf_token %}
+            <fieldset class = "form-group">
+                <legend class = "border-bottom mb-4">Join Our Family</legend>
+                {{ form|crispy}}
+            </fieldset>
+            <div class = "form-group">
+                <button class = "btn btn-outline-info" type="submit">Join</button>
+            </div>
+        </form>
+        <div class = "border-top pt-3">
+            <small class = "text-muted">
+                Already a Member? <a class = "ml-2" href="{% url 'login' %}">Enter</a>
+            </small>
+        </div>
+    </div>
+{% endblock content %}
