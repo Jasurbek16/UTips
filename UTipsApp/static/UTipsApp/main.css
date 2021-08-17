@@ -95,7 +95,9 @@
     vertical-align: middle;
   }
   
-  .account-img {
+  .account-img-side {
+    position: relative;
+    left: 89px;
     height: 125px;
     width: 125px;
     margin-right: 20px;
