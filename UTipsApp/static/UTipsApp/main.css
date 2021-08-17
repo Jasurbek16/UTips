@@ -129,12 +129,14 @@
   }
   
   #sidebar-box {
+    
     font-family: Istok Web;
     text-align: center;
     width: 358px;
   }
 
   #sidebar_info li {
+    color: rgba(0, 0, 0, 0.623);
     border-radius: 15px;
     background-color: rgba(240, 248, 255, 0.055);    
   }
@@ -203,11 +205,19 @@
       margin-right: 16px;
     }
 
-    .account-img {
+    .account-img-side {
       height: 100px;
       width: 100px;
       position: relative;
       left: 33%;
+      margin-bottom: 16px;
+    }
+
+    .account-img {
+      height: 100px;
+      width: 100px;
+      position: relative;
+      left: 1%;
       margin-bottom: 16px;
     }
 
@@ -233,6 +243,18 @@
     border: 1px solid #dddddd81;
     border-radius: 30px;
     margin-bottom: 20px;
+  }
+
+  .media-body p {
+    position: relative;
+    top: 10px;
+    font-size: 12px;
+  }
+
+  .media-body h2 {
+    position: relative;
+    top: 10px;
+    font-size: 30px;
   }
 
   #sidebar-box {
