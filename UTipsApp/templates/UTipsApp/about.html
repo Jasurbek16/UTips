@@ -2,43 +2,62 @@
 {% block content %}
     <h2>About Page</h2>
 {% endblock content %}
-<!-- {% block main-style %}
+{% block main-style %}
 <style class = "back-wide">
   body{
-    background-image: url("../../../media/back_about.jpg");
+    background-image: url("../../../media/vertical.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     background-position: center;
-    background-size: 100%;
+    background-attachment: fixed;
   }
 </style>
-{% endblock main-style %} -->
-{% block sidebar %}
-	<div class="col-md-4" id = "sidebar-box">
-		<div class="content-section" style="border-radius: 8px;">
-	     		{% if user.is_authenticated %}
-		  			<h3>User's Info</h3>
-		  			<p class='text-muted'>Current User's Activities for the last time.
-					<ul class="list-group" id = "sidebar_info">
-						<img class="rounded-circle account-img" src="{{ user.profile.image.url }}"">
-						<li class="list-group-item list-group-item-light"><strong>User:</strong> {{ user.username }}</li>
-						{% if topics %}
-							<li class="list-group-item list-group-item-light"><strong>Last Topic Added:</strong> {{ topics.0.topic }}</li> 
-							<li class="list-group-item list-group-item-light"><strong>On Date:</strong> {{ topics.0.date_shared }}</li>
-							<li class="list-group-item list-group-item-light"><strong>On Subject:</strong> {{ topics.0.subject }}</li>
-						{% else %}
-							<li class="list-group-item list-group-item-light"><em>Seems like you don't have any contributions</em></li>
-						{% endif %}
-		  		{% else %}
-		  			<h3>Overall Info</h3>
-		  			<p class='text-muted'>Quick overview of the things this website contains.
-					<ul class="list-group" id = "sidebar_info">
-						<li class="list-group-item list-group-item-light"><strong>Subjects:</strong> {{ subjects.count }}</li>
-						<li class="list-group-item list-group-item-light"><strong>Topics:</strong> {{ topics.count }}</li>	
-						<li class="list-group-item list-group-item-light"><strong>Last Topic Added:</strong> {{ topics.0.topic }}<br>
-											     						  <strong>Date:</strong> {{ topics.0.date_shared }}<br>
-											     						  <strong>Author:</strong> {{ topics.0.author }}</li>	
-				{% endif %}
-					</ul>
-		</div>
+{% endblock main-style %}
+{% block img-desktop %}
+<footer class="tablet">
+	<section class = "social">
+	  <div id = "footer-text">
+		From a CSE Student at IUT <br>93 916-96-44 <br>jascinmamurov7@gmail.com
 	  </div>
+	  <figure>
+		<a href="https://www.linkedin.com/in/jmamurov" target="_blank"><img src="../../../media/linkedIn_logo_changed.png" alt="Linkedin profile of the programmer"></a>
+	  </figure>
+	  <figure>
+		<a href="https://t.me/Jasurbek16" target="_blank"><img src="../../../media/telegram_logo_changed.png" alt="Telegram profile of the programmer"></a>
+	  </figure>
+	  <figure>
+		<a href="https://www.youtube.com/channel/UCIqxfNzc9zxXa4D5EqvLtdA" target="_blank"><img src="../../../media/youtube_logo_changed.png" alt="YouTube channel of the programmer"></a>
+	  </figure>
+	  <figure>
+		<a href="https://github.com/MJey16" target="_blank"><img src="../../../media/github_logo_changed.png" alt="GitHub profile of the programmer"></a>
+	  </figure>
+	</section>
+	<div id = "footer-text2">
+	  Shared with 💙<br>2021
 	</div>
-{% endblock sidebar %}
+</footer>  
+{% endblock img-desktop %}
+{% block img-tablet %}
+<footer class="tablet">
+	<section class = "social">
+	  <div id = "footer-text">
+		From a CSE Student at IUT <br>93 916-96-44 <br>jascinmamurov7@gmail.com
+	  </div>
+	  <figure>
+		<a href="https://www.linkedin.com/in/jmamurov" target="_blank"><img src="../../../media/linkedIn_logo_changed.png" alt="Linkedin profile of the programmer"></a>
+	  </figure>
+	  <figure>
+		<a href="https://t.me/Jasurbek16" target="_blank"><img src="../../../media/telegram_logo_changed.png" alt="Telegram profile of the programmer"></a>
+	  </figure>
+	  <figure>
+		<a href="https://www.youtube.com/channel/UCIqxfNzc9zxXa4D5EqvLtdA" target="_blank"><img src="../../../media/youtube_logo_changed.png" alt="YouTube channel of the programmer"></a>
+	  </figure>
+	  <figure>
+		<a href="https://github.com/MJey16" target="_blank"><img src="../../../media/github_logo_changed.png" alt="GitHub profile of the programmer"></a>
+	  </figure>
+	</section>
+	<div id = "footer-text2">
+	  Shared with 💙<br>2021
+	</div>
+</footer>
+{% endblock img-tablet %}
