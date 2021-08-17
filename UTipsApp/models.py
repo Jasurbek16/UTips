@@ -3,13 +3,11 @@ from django.db import models
 from django.db.models.deletion import CASCADE
 from django.utils import timezone
 from django.urls import reverse
-from PIL import Image
 
 class Subjects(models.Model):
     # A subject the user wants to share info about
     name = models.CharField(max_length=100)
     professor = models.CharField(max_length=50)
-    image = models.ImageField(default='default_subj.png', upload_to='subject_pics')
 
     class Meta:
         verbose_name_plural = "subjects"
@@ -17,17 +15,6 @@ class Subjects(models.Model):
     def __str__(self):
         return f"{self.name}"
 
-
-    def save(self):
-        super().save()
-        
-        img = Image.open(self.image.path)
-        
-        if img.height > 300 or img.width < 300:
-           out_size = (300, 300)    
-           img.thumbnail(out_size)
-           img.save(self.image.path)
-    
 
 class Info(models.Model):
     # Additional info and the main content

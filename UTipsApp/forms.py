@@ -5,8 +5,8 @@ from .models import Subjects, Info
 class AddSubjectsForm(forms.ModelForm):
     class Meta:
         model = Subjects
-        fields = ["name", "professor", "image"]
-        label = {"subject": "", "professor": "", "image":""}
+        fields = ["name", "professor"]
+        label = {"subject": "", "professor": ""}
 
 
 class AddTopicsForm(forms.ModelForm):
