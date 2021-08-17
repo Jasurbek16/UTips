@@ -9,7 +9,7 @@ class Subjects(models.Model):
     # A subject the user wants to share info about
     name = models.CharField(max_length=100)
     professor = models.CharField(max_length=50)
-    image = models.ImageField(default='default_subj.jpg', upload_to='subject_pics')
+    image = models.ImageField(default='default_subj.png', upload_to='subject_pics')
 
     class Meta:
         verbose_name_plural = "subjects"
