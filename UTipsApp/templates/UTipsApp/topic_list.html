@@ -32,21 +32,21 @@
 {% if topic_page %}
 	
 	{% if topic_page.has_previous %}
-		<a class="btn btn-outline-info mb-4" href="?page=1">First</a>
-		<a class="btn btn-outline-info mb-4" href="?page={{ topic_page.previous_page_number }}">Previous</a>
+		<a class="btn btn-outline-info mb-4 page-button" href="?page=1">First</a>
+		<a class="btn btn-outline-info mb-4 page-button" href="?page={{ topic_page.previous_page_number }}">Previous</a>
 	{% endif %}
 
 	{% for num in topic_page.paginator.page_range %}
 		{% if topic_page.number == num %}
-			<a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+			<a class="btn btn-info mb-4 page-button-active" href="?page={{ num }}">{{ num }}</a>
 		{% elif num > topic_page.number|add:'-3' and num < topic_page.number|add:'3' %}
-			<a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }} </a>
+			<a class="btn btn-outline-info mb-4 page-button" href="?page={{ num }}">{{ num }} </a>
 		{% endif %}
 	{% endfor %}
 
 	{% if topic_page.has_next %}
-		<a class="btn btn-outline-info mb-4" href="?page={{ topic_page.next_page_number }}">Next</a>
-		<a class="btn btn-outline-info mb-4" href="?page={{ topic_page.paginator.num_pages }}">Last</a>
+		<a class="btn btn-outline-info mb-4 page-button" href="?page={{ topic_page.next_page_number }}">Next</a>
+		<a class="btn btn-outline-info mb-4 page-button" href="?page={{ topic_page.paginator.num_pages }}">Last</a>
 	{% endif %}
 
 {% endif %}

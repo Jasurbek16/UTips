@@ -30,7 +30,7 @@
   }
   
   .bg-steel {
-    background-color: #31829b67;
+    background-color: #31829ba9;
   }
   
   .site-header .navbar-nav .nav-link {
@@ -234,6 +234,13 @@
       to right bottom, 
     rgba(199, 214, 224, 0.616), 
     rgba(179, 149, 226, 0.301));
+    border-radius: 13px;
+  }
+
+  .page-button-active {
+    color:#f0eaea;
+    background-color: #236d83a1;
+    border-radius: 13px;
   }
 
   .page-button:hover {
@@ -243,7 +250,7 @@
     rgba(151, 186, 226, 0.212), 
     rgba(255, 255, 255, 0.151));
     box-shadow: #31829b67 0 0 10px;
-
+    border-radius: 13px;
   }
   
 
@@ -400,16 +407,16 @@
       to right bottom, 
       rgba(192, 209, 247, 0.562), 
       rgba(230, 185, 241, 0.541));
+    border-radius: 13px;
+    font-size: 14px;
+
   }
 
-  .page-button:hover {
-    color:white;
-    background: linear-gradient(
-      to right bottom, 
-    rgba(151, 186, 226, 0.212), 
-    rgba(255, 255, 255, 0.151));
-    box-shadow: #31829b67 0 0 10px;
-
+  .page-button-active {
+    color:#f0eaea;
+    background-color: #236d83a1;
+    border-radius: 13px;
+    font-size: 14px;
   }
 
   .quote-desktop {
