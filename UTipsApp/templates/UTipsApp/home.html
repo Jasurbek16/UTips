@@ -24,21 +24,21 @@
 {% if subject_page %}
 	
 	{% if subject_page.has_previous %}
-		<a class="btn btn-outline-info mb-4" href="?page=1">First</a>
-		<a class="btn btn-outline-info mb-4" href="?page={{ subject_page.previous_page_number }}">Previous</a>
+		<a class="btn btn-outline-info mb-4 page-button" href="?page=1">First</a>
+		<a class="btn btn-outline-info mb-4 page-button" href="?page={{ subject_page.previous_page_number }}">Previous</a>
 	{% endif %}
 
 	{% for num in subject_page.paginator.page_range %}
 		{% if subject_page.number == num %}
-			<a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+			<a class="btn btn-info mb-4 page-button-active" href="?page={{ num }}">{{ num }}</a>
 		{% elif num > subject_page.number|add:'-3' and num < subject_page.number|add:'3' %}
-			<a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }} </a>
+			<a class="btn btn-outline-info mb-4 page-button" href="?page={{ num }}">{{ num }} </a>
 		{% endif %}
 	{% endfor %}
 
 	{% if subject_page.has_next %}
-		<a class="btn btn-outline-info mb-4" href="?page={{ subject_page.next_page_number }}">Next</a>
-		<a class="btn btn-outline-info mb-4" href="?page={{ subject_page.paginator.num_pages }}">Last</a>
+		<a class="btn btn-outline-info mb-4 page-button" href="?page={{ subject_page.next_page_number }}">Next</a>
+		<a class="btn btn-outline-info mb-4 page-button" href="?page={{ subject_page.paginator.num_pages }}">Last</a>
 	{% endif %}
 
 {% endif %}
@@ -50,7 +50,7 @@
 	I could either watch it happen <br> or be a part of it. <br> -Elon Musk
 </div>
 
-<div class="quote-mobile">
+<div class="quote-mobile" style="position: relative; top: 30px">
 	I think it is possible for ordinary <br> people to choose to be extraordinary. <br>-Elon Musk
 </div>
 

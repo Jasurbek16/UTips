@@ -228,6 +228,25 @@
     
   }
 
+  .page-button {
+    color:#333333;
+    background: linear-gradient(
+      to right bottom, 
+    rgba(199, 214, 224, 0.616), 
+    rgba(179, 149, 226, 0.301));
+  }
+
+  .page-button:hover {
+    color:white;
+    background: linear-gradient(
+      to right bottom, 
+    rgba(151, 186, 226, 0.212), 
+    rgba(255, 255, 255, 0.151));
+    box-shadow: #31829b67 0 0 10px;
+
+  }
+  
+
   .tablet {
     display: none;
   }
@@ -373,6 +392,24 @@
     left: 50px;
     top: 310px;
     text-align:center;
+  }
+
+  .page-button {
+    color:#333333;
+    background: linear-gradient(
+      to right bottom, 
+      rgba(192, 209, 247, 0.562), 
+      rgba(230, 185, 241, 0.541));
+  }
+
+  .page-button:hover {
+    color:white;
+    background: linear-gradient(
+      to right bottom, 
+    rgba(151, 186, 226, 0.212), 
+    rgba(255, 255, 255, 0.151));
+    box-shadow: #31829b67 0 0 10px;
+
   }
 
   .quote-desktop {
