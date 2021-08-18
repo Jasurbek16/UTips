@@ -212,6 +212,22 @@
     position: relative;
   }
 
+  .quote-mobile {
+    display: none;
+  }
+
+  .quote-desktop {
+    display: inline-block;
+    color:rgba(0, 0, 0, 0.438);
+    font-family: Kalam;
+    font-size: 20px;
+    position: absolute;
+    left: 50px;
+    top: 410px;
+    text-align:center;
+    
+  }
+
   .tablet {
     display: none;
   }
@@ -346,6 +362,21 @@
     top: 80px;
     left: -150px;
     
+  }
+
+  .quote-mobile {
+    display: inline-block;
+    color:rgba(0, 0, 0, 0.438);
+    font-family: Kalam;
+    font-size: 18px;
+    position: absolute;
+    left: 50px;
+    top: 310px;
+    text-align:center;
+  }
+
+  .quote-desktop {
+    display: none;
   }
 
   .desktop {

@@ -13,7 +13,7 @@ from django.contrib.auth.models import User
 
 def home(request):
     subjects = Subjects.objects.order_by('name').all()
-    pages = Paginator(subjects, 4)
+    pages = Paginator(subjects, 2)
     page = request.GET.get('page')
     subject_page = pages.get_page(page)
 
@@ -31,7 +31,7 @@ def home(request):
 def UserTopics(request, name):
     user = get_object_or_404(User, username=name)
     topics = Info.objects.filter(author=user).order_by('-date_shared')
-    pages = Paginator(topics, 3)
+    pages = Paginator(topics, 2)
     page = request.GET.get('page')
     topic_page = pages.get_page(page)
 
@@ -58,7 +58,7 @@ def subject_details(request, pk):
     # For the single subject
     subject = Subjects.objects.get(id=pk)
     topics = subject.info_set.order_by("-date_shared")
-    pages = Paginator(topics, 3)
+    pages = Paginator(topics, 2)
     page = request.GET.get('page')
     topic_page = pages.get_page(page)
     context = {
