@@ -120,13 +120,13 @@
   .media-body p {
     position: relative;
     top: 10px;
-    left: 10px;
+    left: 0;
     font-size: 22px;
   }
 
   .media-body h2 {
     position: relative;
-    left: 10px;
+    left: 0;
     top: 10px;
     font-size: 40px;
   }
@@ -262,8 +262,8 @@
     font-size: 14px;
     background: linear-gradient(
       to right bottom, 
-    rgba(192, 239, 247, 0.788), 
-    rgba(185, 211, 241, 0.603));
+    rgba(192, 209, 247, 0.726), 
+    rgba(230, 185, 241, 0.671));
     padding: 10px 20px;
     border: 1px solid #dddddd81;
     border-radius: 30px;
@@ -273,18 +273,32 @@
   .media-body p {
     position: relative;
     top: 10px;
-    left: 10px;
+    left: 0;
     font-size: 12px;
   }
 
   .media-body h2 {
     position: relative;
-    left: 10px;
+    left: 0;
     top: 10px;
     font-size: 30px;
   }
 
   #sidebar-box {
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, 16%);
+    font-family: Nunito;
+    text-align: center;
+    width: 358px;
+  }
+
+  #sidebar-topics{
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, 62%);
     font-family: Nunito;
     text-align: center;
     width: 358px;

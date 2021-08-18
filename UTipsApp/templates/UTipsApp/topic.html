@@ -33,9 +33,9 @@
 				<strong>Author:</strong>
 				<a href="{% url 'user-topics' topic.author.username %}">{{ topic.author }}</a>
 			</div>	
-			<div class="article-metadata">
-				<br>
+			<br>
 				<strong>Content:</strong>
+			<div class="article-metadata">
 				{{ topic.text|linebreaks }}
 			</div>
 		</div>

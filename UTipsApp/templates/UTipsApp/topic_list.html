@@ -14,7 +14,6 @@
 	<hr>
 	{% for topic in topic_page %}
 		<article class="media content-section" style="border-radius: 45px; background-color: rgba(148, 141, 212, 0.397);">
-			<a href="{% url 'user-topics' topic.author.username %}"><img class="rounded-circle article-img" src="{{ topic.author.profile.image.url }}"></a>
 			<div class="media-body">
 				<h3>
 					<a class="article-title" href="{% url 'topic-details' topic.id %}">{{ topic.topic }}</a>
@@ -54,7 +53,7 @@
 
 {% endblock content %}
 {% block sidebar %}
-	<div class="col-md-4" id = "sidebar-box">
+	<div class="col-md-4" id = "sidebar-topics">
 		<div class="content-section">
 		  <h3>Topic Info</h3>
 		  <p class='text-muted'>Quick overview of the topics this subject contains.

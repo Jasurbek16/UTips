@@ -58,7 +58,7 @@ def subject_details(request, pk):
     # For the single subject
     subject = Subjects.objects.get(id=pk)
     topics = subject.info_set.order_by("-date_shared")
-    pages = Paginator(topics, 4)
+    pages = Paginator(topics, 3)
     page = request.GET.get('page')
     topic_page = pages.get_page(page)
     context = {

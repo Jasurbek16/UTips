@@ -3,19 +3,18 @@
 {% block link %}
     <a class="nav-item nav-link" href="{% url 'Ut-about' %}">About</a>
 {% endblock link %}
-<!-- {% block main-style %}
+{% block main-style %}
 <style class = "back-wide">
   body{
-    background-image: url("../../../media/back_profile.jpg");
+    background-image: url("../../../media/img1.jpg");
     background-position: center;
     background-size: 100%;
   }
 </style>
-{% endblock main-style %} -->
+{% endblock main-style %}
 {% block content %}
     <div class="content-section">
       <div class="media">
-        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
         <div class="media-body">
           <h2 class="account-heading">{{ user.username }}</h2>
           <p class="text-secondary">{{ user.email }}</p>
