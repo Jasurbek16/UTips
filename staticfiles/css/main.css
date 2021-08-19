@@ -1,0 +1,430 @@
+  @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Istok+Web&family=Kalam&family=Nunito:wght@300&display=swap');
+
+  body {
+    background: #5c84a7;
+   
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display:flex;
+    flex-direction:column;
+    min-height: 105vh;
+    padding: 3em;
+    color: #333333;
+    margin-top: 5rem;
+    padding: 0
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #444444;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  }
+  
+  main{
+    flex-grow: 1;
+  }
+  
+  ul {
+    margin: 0;
+  }
+  
+  .bg-steel {
+    background-color: #31829ba9;
+  }
+  
+  .site-header .navbar-nav .nav-link {
+    color: #e7eff3fa;
+  }
+  
+  .site-header .navbar-nav .nav-link:hover {
+    color: #ffffff;
+  }
+  
+  .site-header .navbar-nav .nav-link.active {
+    font-weight: 500;
+  }
+
+  .content-section {
+    font-family: Istok Web;
+    background: linear-gradient(
+      to right bottom, 
+    rgba(255,255,255,0.7), 
+    rgba(255,255,255,0.3));
+    padding: 10px 20px;
+    border: 1px solid #dddddd81;
+    border-radius: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .article-title {
+    font-family: Istok Web;
+    color: #444444;
+  }
+  
+  a.article-title:hover {
+    color: #428bca;
+    text-decoration: none;
+  }
+  
+  .article-content {
+    white-space: pre-line;
+  }
+  
+  .article-img {
+    height: 65px;
+    width: 65px;
+    margin-right: 16px;
+  }
+  
+  .article-metadata {
+    padding-bottom: 1px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #e3e3e3
+  }
+  
+  .article-metadata a:hover {
+    color: #333;
+    text-decoration: none;
+  }
+  
+
+  .article-svg {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+  }
+  
+  .account-img-side {
+    position: relative;
+    left: 89px;
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+  }
+
+  .account-img {
+    position: relative;
+    left: 0;
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+  }
+  
+  .account-heading {
+    font-size: 2.5rem;
+  }
+  
+  .media-body p {
+    position: relative;
+    top: 10px;
+    left: 0;
+    font-size: 22px;
+  }
+
+  .media-body h2 {
+    position: relative;
+    left: 0;
+    top: 10px;
+    font-size: 40px;
+  }
+
+  #about-text{
+    border-radius: 5px; 
+		font-size: 20px; 
+		width: 900px;
+  }
+  
+  #id_bio {
+    width: 100%;
+    height: 100px;
+  }
+  
+  #profile-logo {
+    
+    background-size: 41px;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: 1px solid white;
+    display:inline-block;
+    text-indent: -9999999px;
+    width:41px;
+  }
+  
+  #sidebar-box {
+    
+    font-family: Istok Web;
+    text-align: center;
+    width: 358px;
+  }
+
+  #sidebar_info li {
+    color: rgba(0, 0, 0, 0.623);
+    border-radius: 15px;
+    background-color: rgba(240, 248, 255, 0.055);    
+  }
+  
+  footer {
+    background:rgba(49, 46, 46, 0.555);
+  }
+  
+  footer section figure a img:hover {
+    transform: translateY(-10px);
+    box-shadow: rgb(105, 193, 219) 0 0 22px;
+  }
+
+  .social {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .social figure {
+    position: relative;
+    margin:10px;
+    width: 45px;
+    top: 30px;
+    left: 60%;
+  }
+  
+  .social figure img {    
+    border-radius: 50%;
+    box-shadow: gray 0 0 10px;
+    width: 40px;
+  }
+  
+  #footer-text{
+    font-size: 18px;
+    height: 10%;
+    color: rgba(243, 222, 228, 0.781);
+    position:relative;
+    left:1%;
+  }
+
+  #footer-text2{
+    font-family: Kalam;
+    color: rgba(243, 222, 228, 0.781);  
+    height: 10%;
+    font-size: 17px;
+    text-align:center;
+    position: relative;
+  }
+
+  .quote-mobile {
+    display: none;
+  }
+
+  .quote-desktop {
+    display: inline-block;
+    color:rgba(0, 0, 0, 0.438);
+    font-family: Kalam;
+    font-size: 20px;
+    position: absolute;
+    left: 50px;
+    top: 410px;
+    text-align:center;
+    
+  }
+
+  .page-button {
+    color:#333333;
+    background: linear-gradient(
+      to right bottom, 
+    rgba(199, 214, 224, 0.616), 
+    rgba(179, 149, 226, 0.301));
+    border-radius: 13px;
+  }
+
+  .page-button-active {
+    color:#f0eaea;
+    background-color: #236d83a1;
+    border-radius: 13px;
+  }
+
+  .page-button:hover {
+    color:white;
+    background: linear-gradient(
+      to right bottom, 
+    rgba(151, 186, 226, 0.212), 
+    rgba(255, 255, 255, 0.151));
+    box-shadow: #31829b67 0 0 10px;
+    border-radius: 13px;
+  }
+  
+
+  .tablet {
+    display: none;
+  }
+
+  @media screen and (max-width: 1064px) {
+  
+    .article-title {
+      color: #444444;
+      font-family: Istok Web;
+      font-size: 20px;
+    }
+    
+    .article-img {
+      height: 48px;
+      width: 48px;
+      margin-right: 16px;
+    }
+
+    .account-img-side {
+      height: 100px;
+      width: 100px;
+      position: relative;
+      left: 33%;
+      margin-bottom: 16px;
+    }
+
+    .account-img {
+      height: 100px;
+      width: 100px;
+      position: relative;
+      left: 1%;
+      margin-bottom: 16px;
+    }
+
+    #about-text{
+      border-radius: 5px; 
+      font-size: 15px; 
+      width: 400px;
+    }
+    
+
+    .bg-steel {
+      background-color: #116e8a;
+    }
+
+    .content-section {
+    font-family: Istok Web;
+    font-size: 14px;
+    background: linear-gradient(
+      to right bottom, 
+    rgba(192, 209, 247, 0.726), 
+    rgba(230, 185, 241, 0.671));
+    padding: 10px 20px;
+    border: 1px solid #dddddd81;
+    border-radius: 30px;
+    margin-bottom: 20px;
+  }
+
+  .media-body p {
+    position: relative;
+    top: 10px;
+    left: 0;
+    font-size: 12px;
+  }
+
+  .media-body h2 {
+    position: relative;
+    left: 0;
+    top: 10px;
+    font-size: 30px;
+  }
+
+  #sidebar-box {
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, 16%);
+    font-family: Nunito;
+    text-align: center;
+    width: 358px;
+  }
+
+  #sidebar-topics{
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, 62%);
+    font-family: Nunito;
+    text-align: center;
+    width: 358px;
+  }
+
+  #sidebar_info li {
+    border-radius: 40px;
+    margin: 2px;
+    background-color: rgba(240, 248, 255, 0.637);    
+  }
+
+  footer {
+    background:rgba(49, 46, 46, 0.555);
+    height: 250px;
+  }
+
+  #footer-text{
+    font-family: Balsamiq Sans;
+    font-size: 15px;
+    color: rgba(243, 222, 228, 0.781);
+    position:relative;
+    text-align: center;
+    left: 19%;
+    top: 10px;
+  }
+
+  #footer-text2{
+    font-family: Kalam;
+    color: rgba(243, 222, 228, 0.781);  
+    height: 10%;
+    font-size: 15px;
+    text-align:center;
+    position: relative;
+    top:60px;      
+  }
+
+  .tablet {
+    display: block;
+  }
+
+  .social figure {
+    position: relative;
+    margin: 20px;
+    width: 10px;
+    top: 80px;
+    left: -150px;
+    
+  }
+
+  .quote-mobile {
+    display: inline-block;
+    color:rgba(0, 0, 0, 0.438);
+    font-family: Kalam;
+    font-size: 18px;
+    position: absolute;
+    left: 50px;
+    top: 310px;
+    text-align:center;
+  }
+
+  .page-button {
+    color:#333333;
+    background: linear-gradient(
+      to right bottom, 
+      rgba(192, 209, 247, 0.562), 
+      rgba(230, 185, 241, 0.541));
+    border-radius: 13px;
+    font-size: 14px;
+
+  }
+
+  .page-button-active {
+    color:#f0eaea;
+    background-color: #236d83a1;
+    border-radius: 13px;
+    font-size: 14px;
+  }
+
+  .quote-desktop {
+    display: none;
+  }
+
+  .desktop {
+    display: none;
+  }
+    
+  }
