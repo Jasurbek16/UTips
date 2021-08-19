@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type = "text/css" href="../../static/UTipsApp/main.css">
+    <link rel="stylesheet" type = "text/css" href="{% static '/css/main.css' %}">
     {% if title %}
         <title>UTips • {{ title }}</title>
     {% else %}
@@ -18,7 +19,7 @@
   {% block main-style %}
     <style class = "back-wide">
       body{
-        background-image: url("../../../media/img2.jpg");
+        background-image: url("{% static 'media/img2.jpg' %}");
       }
     </style>
   {% endblock %}
@@ -39,7 +40,7 @@
                   <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                   <style>
                     #profile-logo {
-                      background-image: url("../../../media/profile_logo.png");
+                      background-image: url("{% static '/media/profile_logo.png' %}");
                     }
                   </style>
                   <a class="nav-item nav-link" id = "profile-logo" href="{% url 'profile' %}">Profile</a>

@@ -1,5 +1,5 @@
 {% extends 'UTipsApp/base.html' %} 
-
+{% load static %}
 {% block content %}
 	<article class="media content-section">
 		<div class="media-body" id = "about-text">
@@ -21,7 +21,7 @@
 {% block main-style %}
 <style class = "back-wide">
   body{
-    background-image: url("../../../media/img1.jpg");
+    background-image: url("{% static 'media/img1.jpg' %}");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -37,16 +37,16 @@
 			From a CSE Student at IUT <br>93 916-96-44 <br>jascinmamurov7@gmail.com
 		  </div>
 		  <figure>
-			<a href="https://www.linkedin.com/in/jmamurov" target="_blank"><img src="../../../media/linkedIn_logo_changed.png" alt="Linkedin profile of the programmer"></a>
+			<a href="https://www.linkedin.com/in/jmamurov" target="_blank"><img src="{% static 'media/linkedIn_logo_changed.png' %}" alt="Linkedin profile of the programmer"></a>
 		  </figure>
 		  <figure>
-			<a href="https://t.me/Jasurbek16" target="_blank"><img src="../../../media/telegram_logo_changed.png" alt="Telegram profile of the programmer"></a>
+			<a href="https://t.me/Jasurbek16" target="_blank"><img src="{% static 'media/telegram_logo_changed.png' %}" alt="Telegram profile of the programmer"></a>
 		  </figure>
 		  <figure>
-			<a href="https://www.youtube.com/channel/UCIqxfNzc9zxXa4D5EqvLtdA" target="_blank"><img src="../../../media/youtube_logo_changed.png" alt="YouTube channel of the programmer"></a>
+			<a href="https://www.youtube.com/channel/UCIqxfNzc9zxXa4D5EqvLtdA" target="_blank"><img src="{% static 'media/youtube_logo_changed.png' %}" alt="YouTube channel of the programmer"></a>
 		  </figure>
 		  <figure>
-			<a href="https://github.com/MJey16" target="_blank"><img src="../../../media/github_logo_changed.png" alt="GitHub profile of the programmer"></a>
+			<a href="https://github.com/MJey16" target="_blank"><img src="{% static 'media/github_logo_changed.png' %}" alt="GitHub profile of the programmer"></a>
 		  </figure>
 		</section>
 		<div id = "footer-text2">
@@ -62,16 +62,16 @@
 			From a CSE Student at IUT <br>93 916-96-44 <br>jascinmamurov7@gmail.com
 		  </div>
 		  <figure>
-			<a href="https://www.linkedin.com/in/jmamurov" target="_blank"><img src="../../../media/linkedIn_logo_changed.png" alt="Linkedin profile of the programmer"></a>
+			<a href="https://www.linkedin.com/in/jmamurov" target="_blank"><img src="{% static 'media/linkedIn_logo_changed.png' %}" alt="Linkedin profile of the programmer"></a>
 		  </figure>
 		  <figure>
-			<a href="https://t.me/Jasurbek16" target="_blank"><img src="../../../media/telegram_logo_changed.png" alt="Telegram profile of the programmer"></a>
+			<a href="https://t.me/Jasurbek16" target="_blank"><img src="{% static 'media/telegram_logo_changed.png' %}" alt="Telegram profile of the programmer"></a>
 		  </figure>
 		  <figure>
-			<a href="https://www.youtube.com/channel/UCIqxfNzc9zxXa4D5EqvLtdA" target="_blank"><img src="../../../media/youtube_logo_changed.png" alt="YouTube channel of the programmer"></a>
+			<a href="https://www.youtube.com/channel/UCIqxfNzc9zxXa4D5EqvLtdA" target="_blank"><img src="{% static 'media/youtube_logo_changed.png' %}" alt="YouTube channel of the programmer"></a>
 		  </figure>
 		  <figure>
-			<a href="https://github.com/MJey16" target="_blank"><img src="../../../media/github_logo_changed.png" alt="GitHub profile of the programmer"></a>
+			<a href="https://github.com/MJey16" target="_blank"><img src="{% static 'media/github_logo_changed.png' %}" alt="GitHub profile of the programmer"></a>
 		  </figure>
 		</section>
 		<div id = "footer-text2">

@@ -1,12 +1,13 @@
 {% extends "UTipsApp/base.html" %}
 {% load crispy_forms_tags %}
+{% load static %}
 {% block link %}
     <a class="nav-item nav-link" href="{% url 'Ut-about' %}">About</a>
 {% endblock link %}
 {% block main-style %}
 <style class = "back-wide">
   body{
-    background-image: url("../../../media/img1.jpg");
+    background-image: url("{% static 'media/img1.jpg' %}");
     background-position: center;
     background-size: 100%;
   }
