@@ -1,3 +1,1 @@
-<h1> UTips </h1>
-<hr></hr>
-<h2> Via Django </h2>
+<img src="https://github.com/Jasurbek16/UTips/blob/main/UTips.png?raw=true">
